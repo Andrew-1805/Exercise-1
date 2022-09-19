@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Clock</title>
+    </head>
+ 
+    <body onload="display()">
+ 
+        <h1>Digital Clock</h1>
+        <p id="time"></p>
+ 
+        <script>
+            function display() 
+            {
+                const today = new Date();
+                let h = today.getHours();
+                let m = today.getMinutes();
+                let s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
+                setTimeout(display, 1000);
+            }
+ 
+            function checkTime(i) 
+            {
+                if (i < 10) {i = "0" + i};
+                return i;
+            }
+ 
+        </script>
+    </body>
+</html>
