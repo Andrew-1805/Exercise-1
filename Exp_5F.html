@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Birthday Cake</Title>
+    </head>
+    <body>
+        <h1>Birthday cake Order Form</h1>
+        <fieldset>
+            Birthday cake Order Form of 1/2kg Cakes : <input type="text" id="small"><br><br>
+            Birthday cake Order Form of 1kg Cakes : <input type="text" id="medium"> <br><br>
+            Birthday cake Order Form of 2kg Cakes : <input type="text" id="large"><br><br>
+
+            Tip
+
+            <label><input type="radio" value="10" name="tip">10%</label>
+            <label><input type="radio" value="15" name="tip" checked = "checked">15%</label>
+            <label><input type="radio" value="20" name="tip">20%</label><br>
+
+            <button type="button" id="submit" onclick="bill()">Calculate Order</button><br>
+          <span id="price"></span>
+        </fieldset>
+        <script>
+            function bill()
+            {
+                var half = parseInt(document.getElementById("small").value);
+                var one = parseInt(document.getElementById("medium").value);
+                var two = parseInt(document.getElementById("large").value);
+                var total;
+
+                var small = 100;
+                var medium = 200;
+                var large = 400;
+
+                total = (half * small) + (one * medium) + (two * large);
+                var tax = 0.09 * total;
+                total +=tax;
+
+                var tip_per = document.querySelector('input[name="tip"]:checked').value;
+                tip=(tip_per/100)*total;
+                total += tip;
+                
+                document.getElementById("price").innerHTML = "Cost of Order : "+ total +"Rupees";
+            }
+        </script>
+    </body>
+</html>
