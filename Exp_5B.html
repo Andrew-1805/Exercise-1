@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI calculator</title>
+    </head>
+
+    <body>
+        <hl><b>Calculate your body index</b></hl>
+        
+        <fieldset>
+            Weight(in kilograms): <input type="text" id="weight"><br><br>
+            Height(in meters): <input type="text" id="height"><br><br>
+            
+            <button type ="submit" onclick="calculate()">Get BMI </button>
+        </fieldset>
+    
+    <p> Your BMI is <u><b><span id = "score1"></span></b></u><br>
+        Your body type is <u><b><span id = "type1"></span></b></u>
+    </p>
+
+    <script language="JavaScript">
+
+  
+        function calculate()
+        {
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            const score = weight/(height*height)
+            document.getElementById("score1").innerHTML = score;
+
+            var type;
+            if(score < 18)
+            {
+                type = "Underweight";
+            }
+
+            else if(score > 18 && score < 25)
+            {
+                type = "Normal";
+            }
+
+            else if(score > 25 && score < 30)
+            {
+                type = "Overweight";
+            }
+
+            else
+            {
+                type = "Obese";
+            }
+           
+            document.getElementById("type1").innerHTML = type;       
+        }
+    </script>
+    
+    
+    </body>
+</html>
