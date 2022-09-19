@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>string</title>
+    </head>
+    <body>
+        <script>
+            function big_small()
+            {
+                len = str1.length
+                const arr = str1.split(' ');
+                arr.sort((a,b) => a.length - b.length);
+                len = arr.length
+                document.write("Shortest : "+ arr[0]);
+                document.write(" Longest : "+ arr[len-1]);
+            }
+
+            var str1 = prompt("Enter a string : ");
+            var smallest = big_small(str1);   
+        </script>
+    </body>
+</html>
