@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student</title>
+    </head>
+    
+    <body onload="Student_arr()">
+        <h1>Student details</h1>
+        
+        <div id="out_before"></div>
+        <div id="out_after"></div>
+        
+        <script>    
+            function Student_arr()
+            {
+             var Student = [{name : 'John', r_num : 'URK20CS2028', dob : '20-apr-1995'},{name : 'Joseph',r_num : 'URK20CS2048',dob : '05-jan-1998'},{name : 'Ram',r_num : 'URK20CS2052',dob : '05-jan-2005'}];
+             
+                let text_before = " "
+                let text_after = " "
+                for(var i =0; i<Student.length;i++)
+                {
+ 
+                    let nam = Student[i].name;
+                    let reg = Student[i].r_num;
+                    let d_o_b = Student[i].dob;
+ 
+                    dob_slice = d_o_b.slice(7,11);
+                    year = parseInt(dob_slice);
+ 
+                    if(year < 2000)
+                    {
+                        text_before +=nam + "'s Register Number is " + reg+"<br>";
+                    }
+ 
+                    else if (year > 2000)
+                    {
+                        text_after +=nam + "'s Register Number is " + reg+"<br>";
+                    }
+   
+                }
+ 
+                document.getElementById('out_before').innerHTML ="<b><u>Student have date of birth before 2000</u></b><br>"+ text_before;
+                document.getElementById('out_after').innerHTML ="<br><b><u>Student have date of birth after 2000</u></b><br>"+ text_after;
+            }
+ 
+        </script>
+    </body>
+</html>
