@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car</title>
+    </head>
+    <body>
+        <h1>Move a Car</h1>
+        <button type="button" onclick="moveRight()">Move Right</button>
+        <button type="button" onclick="stop()">Stop</button>
+ 
+        <img id="img" src="https://imgd.aeplcdn.com/1056x594/cw/ec/23875/RollsRoyce-Dawn-Right-Front-Three-Quarter-75144.jpg?v=201711021421&wm=1&q=75">
+ 
+        <script>
+            function init()
+            {
+                imgObj = document.getElementById('img');
+                imgObj.style.position = 'relative';
+                imgObj.style.left = '0px';
+            }
+ 
+            function moveRight()
+            {
+                
+                imgObj.style.left = parseInt(imgObj.style.left)+1+'px';
+                animate = setTimeout('moveRight()',10);
+            }
+ 
+            function stop()
+            {
+                clearTimeout(animate);
+                imgObj.style.left = '0px'
+            }
+ 
+            window.onload = init()
+        </script>
+    </body>
+</html>
