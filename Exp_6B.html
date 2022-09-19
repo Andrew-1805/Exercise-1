@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BG Color changer</title>
+    </head>
+    <body onload="color()">
+        <h1>Color Background!</h1>
+        <script >
+            function color()
+            {
+                var red = Math.floor(Math.random()*255);
+                var blue = Math.floor(Math.random()*255);
+                var green = Math.floor(Math.random()*255);
+ 
+                var color = "rgb("+red+","+green+","+blue+")";
+ 
+                document.getElementsByTagName("body")[0].style = "background-color:"+color;
+                
+            }
+            setInterval(color,1000);
+            
+        </script>
+    </body>
+</html>
