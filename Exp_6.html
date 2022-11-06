@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6</title>
+    <script src="script6.js"></script>
+    <style>
+        #clock {
+            font-size: 3em;
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+
+        #carh {
+            width: 250px;
+
+        }
+
+        #dynamic,
+        #texte {
+            font-size: 1em;
+            width: 600px;
+            height: 150px;
+            margin: 20px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>
+                <h2>Clock</h2>
+            </legend>
+            <div id="clock"></div>
+        </fieldset>
+        <fieldset>
+            <legend>
+                <h2>Dynamic Background</h2>
+            </legend>
+            <div id="dynamic"></div>
+        </fieldset>
+        <fieldset>
+            <legend>
+                <h2>Zoom in and Zoom out</h2>
+            </legend>
+            <div id="texte" onmouseover="incSIZE()" onmouseout="decSIZE()"> You can Maximize or Minimize this text</div>
+        </fieldset>
+    </div>
+    <div height="100px">
+        <fieldset>
+            <legend>
+                <h2>Car !?</h2>
+            </legend>
+
+            <img id="car" src="c1.png" width="150" height="100"
+                style="position: relative; right: 0px; left: 0px; top: 0px;"></img>
+                
+            <input type="button" value="Reverse" onclick="initl()" style="position: relative; top:30px;" />
+            <input type="button" value="Stop" onclick="stopCar()" style="position: relative; top:30px;" />
+            <input type="button" value="Reset" onclick="resetcar()" style="position: relative; top:30px;" />
+            <br><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>
+                <h2>Student Details!</h2>
+            </legend>
+            <div id='Std1' style="width:70%; height:60px">Before 2000:<br></div>
+            <div id='Std2' style="width:70%; height:60px">After 2000:<br></div>
+            <input type="button" value="Click" onclick="display1()" />
+        </fieldset>
+    </div>
+</body>
+
+</html>
