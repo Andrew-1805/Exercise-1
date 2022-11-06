@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+    <script     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="text/javascript"></script> 
+    <script     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angularroute.js"></script> 
+    <script>     var app = angular.module('myapp',['ngRoute']);     var app = angular.module('myapp',['ngRoute']);      app.config(function($routeProvider){ 
+            $routeProvider.when('/login',{ templateUrl:'login.html'     }) 
+        .when('/register',{ templateUrl:'register.html' 
+    }) 
+    }) 
+    </script> 
+    </head> 
+    <body ng-app="myapp"> 
+        <a href="login.html">login</a> 
+        <a href="register.html">register</a>     <hr> 
+        <div ng-view> 
+        </div> 
+        </body> 
+        </html>
