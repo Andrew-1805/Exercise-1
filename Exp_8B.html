@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <script src="https://code.angularjs.org/1.6.9/angular.js"></script> 
+        <script>            var app = angular.module('CalculatorApp',[])              
+                            app.controller('CalculatorController', function($scope)  
+            {  
+                $scope.result = function() {                      if ($scope.operator == '+') {                          return $scope.a + $scope.b; 
+                    }                      if ($scope.operator == '-') {                          return $scope.a - $scope.b; 
+                    }                      if ($scope.operator == '*') {                          return $scope.a * $scope.b; 
+                    }                      if ($scope.operator == '/') {                          return $scope.a / $scope.b; 
+                    } 
+                };  
+            });  
+        </script> 
+ 
+    </head> 
+ 
+    <body ng-app="CalculatorApp"> 
+        <div  ng-controller="CalculatorController">  
+            <p> Enter first number : <input type="number" ng-model="a"></p>  
+            <p> Enter second number : <input type="number" ng-model="b"></p>  
+            <p>Select Operator <select ng-model="operator">  
+                <option>+</option>  
+                <option>*</option>  
+                <option>-</option>
+                <option>/</option>  
+            </select></p>
+            <p>Answer : {{ result() }}</p>  
+        </div>  
+    </body> 
+    </html>   
+  
