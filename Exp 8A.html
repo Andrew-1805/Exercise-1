@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <script src="https://code.angularjs.org/1.6.9/angular.js"></script> 
+        <script>             var app = angular.module("app", []);             app.controller("FrmController", function($scope)  
+            { 
+                $scope.comment = []; 
+                $scope.btn_add = function()  
+                {                      if($scope.txtcomment !='') 
+                    {    
+                        $scope.comment.push($scope.txtcomment); 
+                        $scope.txtcomment = ""; 
+                    } 
+                }  
+                $scope.remItem = function($index) {  
+                $scope.comment.splice($index, 1);} 
+            });  
+        </script>  
+    </head> 
+    <body ng-app="app">  
+        <div id='dvl'>  
+            <form ng-controller="FrmController"> 
+                Post your Comment 
+                <br> 
+                <form ng-controller="FrmController">  
+                    <textarea ng-model="txtcomment" placeholder="Your Comment" style='width:550px'></textarea> 
+                    <br>  
+                    <button ng-click='btn_add();'style='margin-top:10px;'>Post Comment</button>  
+                    <h4>Comments</h4>  
+                    <ul>  
+                        <li ng-repeat="comnt in comment"> {{comnt}} <a style="float: right;" href="" ng-click="remItem($index)">x</a></li>  
+                    </ul>  
+                </form>  
+            </form> 
+        </div>  
+    </body> 
+    </html>
